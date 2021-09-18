@@ -37,7 +37,7 @@ function draw() {
    drawSprites();
    
   
-var apple_sprites = Math(random(1,3));
+var apple_sprites = Math.round(random(1,3));
 
  var select_sprites = Math.random(random(1,3));
 
@@ -46,7 +46,7 @@ var apple_sprites = Math(random(1,3));
  var select_sprites = Math.round(random(1,3));
 
   
-    if (frameCount / 80 == 0) {
+    if (frameCount % 80 == 0) {
      if (select_sprites == 1) {
      createApples();
      } else if (select_sprites == 2) {
@@ -56,6 +56,26 @@ var apple_sprites = Math(random(1,3));
      }
    }
  
-  redL.velocityY = 3;
-  redL.lifetime = 150;
+  
+}
+
+function createApples() {
+  apple = createSprite(random(50, 350),40, 10, 10);
+  apple.addImage(appleImg);
+  apple.scale=0.07;
+  apple.velocityY = 3;
+  apple.lifetime = 150;
+    
+}
+
+function createOrange(){
+
+
+
+}
+
+function createRed(){
+
+
+  
 }
